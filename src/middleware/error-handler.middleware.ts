@@ -11,4 +11,4 @@ export const errorHandlerMiddleware = (err: AppError, req: Request, res: Respons
   });
 };
 
-  console.log('Hello')
+   console.log('Hello')
