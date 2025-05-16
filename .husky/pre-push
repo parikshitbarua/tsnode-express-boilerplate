@@ -1,4 +1,4 @@
-# #!/bin/sh
+#!/usr/bin/env sh
 # . "$(dirname "$0")/_/husky.sh"
 
 red='\033[0;31m'
@@ -8,6 +8,9 @@ no_color='\033[0m'
 
 echo -e "\n${yellow}Executing pre-push hook...${no_color}\n"
 
-npm test
+npm test || {
+  echo -e "${red}Tests failed! Please fix the failing tests before pushing.${no_color}\n"
+  exit 1
+}
 
 echo -e "${green}Git pre-push hook was successful!${no_color}\n"
