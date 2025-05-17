@@ -15,6 +15,7 @@ Each commit message consists of a **header**, a **body**, and a **footer**:
 ```
 
 The **header** is mandatory and must conform to the format:
+
 - `type`: The type of change
 - `scope`: The scope of the change (optional)
 - `subject`: A short description of the change
@@ -70,4 +71,4 @@ If your commit relates to an issue, reference it in the footer:
 fix(auth): handle expired tokens
 
 Closes #123
-``` 
+```
