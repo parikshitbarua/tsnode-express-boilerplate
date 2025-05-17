@@ -10,5 +10,3 @@ export const errorHandlerMiddleware = (err: AppError, req: Request, res: Respons
     message: err.message || "Internal Server Error"
   });
 };
-
-   console.log('Hello')

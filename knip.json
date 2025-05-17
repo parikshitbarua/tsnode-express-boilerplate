@@ -2,8 +2,15 @@
   "$schema": "https://unpkg.com/knip@latest/schema.json",
   "entry": ["src/server.ts"],
   "project": ["src/**/*.ts"],
-  "ignoreDependencies": ["@types/*", "@typescript-eslint/*"],
+  "ignoreDependencies": [
+    "@types/*",
+    "@typescript-eslint/*",
+    "@eslint/js",
+    "typescript-eslint",
+    "eslint-config-prettier"
+  ],
   "ignoreExportsUsedInFile": true,
+  "ignoreBinaries": ["lint-staged"],
   "rules": {
     "files": "error",
     "dependencies": "error",

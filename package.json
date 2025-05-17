@@ -16,7 +16,8 @@
     "lint-and-fix": "eslint . --ext .ts --fix",
     "knip": "knip",
     "prettier": "prettier --config .prettierrc . --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "pre-commit": "npx lint-staged && npm run knip"
   },
   "keywords": [],
   "author": "",
@@ -52,9 +53,8 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
-      "eslint --fix",
-      "prettier --write",
-      "knip"
+      "prettier --write --config .prettierrc",
+      "eslint --fix --max-warnings=0"
     ]
   }
 }

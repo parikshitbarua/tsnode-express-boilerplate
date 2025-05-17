@@ -7,9 +7,17 @@ no_color='\033[0m'
 
 echo -e "\n${yellow}Executing pre-commit hook...${no_color}\n"
 
-# npx husky add .husky/pre-commit "npx lint-staged"
+echo -e "${yellow}Staged files:${no_color}"
+git diff --cached --name-only
 
-npx lint-staged
+echo -e "\n${yellow}Running prettier...${no_color}\n"
+npx prettier --write "src/**/*.ts"
+
+echo -e "\n${yellow}Running eslint...${no_color}\n"
+npx eslint --fix "src/**/*.ts"
+
+echo -e "\n${yellow}Running knip...${no_color}\n"
+npm run knip
 
 echo -e "${green}Git pre-commit hook was successful!${no_color}\n"
 exit 0
