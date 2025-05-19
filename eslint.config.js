@@ -27,6 +27,7 @@ module.exports = [
       ...eslint.configs.recommended.rules,
       ...tseslint.configs.recommended[0].rules,
       "prettier/prettier": "error",
+      "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
